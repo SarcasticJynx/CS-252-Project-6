@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <body>
+        <div ng-app="404App" ng-controller="404Ctrl">
+            <h1>
+                404 Error: Page not found
+            </h1>
+            <p>
+                We couldn't cook up what you were looking for. Click the button below to return to the main page.
+            </p>
+            <img src="Doge Food Image.jpg" alt="Doge Toast" width="500" height="333">
+            <button ng-click="returnMain()">Return to Main Page</button>
+        </div>
+    </body>
+
+    <script>
+        var app = angular.module('404App', []);
+        app.controller('404Ctrl', function($scope) {
+            $scope.returnMain = function() {
+                window.location.href = "Main-Page.html"
+            };
+        });
+    </script>
+</html>
