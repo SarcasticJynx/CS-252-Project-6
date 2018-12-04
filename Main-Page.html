@@ -1,25 +1,59 @@
 <!DOCTYPE html>
-<html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<body>
-    <div ng-app="mainApp" ng-controller="mainController">
-    
-    <h1>
-        Budgeteering
-    </h1>
-    <p>
-        Welcome new user:
-    </p>
-    <p>
-            Food Name : <input type="text" ng-model="name" placeholder="Enter name here">
-            Price : <input type="number" ng-model="price" placeholder="Enter a price">
-            Quantity : <input type="number" ng-model="number" placeholder="Enter a quantity">
-    </p>
-    <h1>
-        Total price of {{ name }} will be ${{ price * number }}
-    </h1>
-
-</div>
-
-</body>
+<html>   
+    <style>
+        table, th , td  {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        table tr:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <body>
+        
+        <div ng-app="mainApp", ng-controller="mainCtrl">
+            <h1>
+                Budgeteering
+            </h1>
+            <p>
+                Welcome new user:
+            </p>
+            
+            <p>
+                Food Name : <input type="text" ng-model="name" placeholder="Enter name here">
+                Price : <input type="number" ng-model="price" placeholder="Enter price here">
+                Quantity : <input type="number" ng-model="quantity" placeholder="Enter quantity here">
+            </p>
+            <button ng-click="AddItem(name,price,quantity)">Add This item</button>
+            <table>
+                <tr ng-repeat="x in names">
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.price }}</td>
+                    <td>{{ x.quantity }}</td>
+                    <td>${{ x.price * x.quantity }}</td>
+                </tr>	
+            </table>
+            <h1>
+                Total price of {{name}} will be {{price * quantity}}.
+            </h1>
+        </div>
+    </body>
+    <script>
+        pressed = 0
+        names = []
+        prices = []
+        quantities = []
+        var app = angular.module('mainApp', []);
+        app.controller('mainCtrl',function($scope){
+            //implement sql server to store and get data
+            $http.get("")
+            .then(function (response) {$scope.names = response.data.records;});
+        });
+    </script>
 </html>
