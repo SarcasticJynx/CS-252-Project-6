@@ -1,6 +1,7 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
+var port = process.env.port || 1337;
 
 var server = http.createServer(function(request, response) {
 
@@ -28,7 +29,7 @@ var server = http.createServer(function(request, response) {
         });
   }
         
-});
+}).listen(port);
 
-server.listen(2050, '127.0.0.1');
-console.log('listening to port 2050');
+//server.listen(2050, '127.0.0.1');
+//console.log('listening to port 2050');
