@@ -1,6 +1,7 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
+//var sql todo
 var port = process.env.port || 1337;
 
 var server = http.createServer(function(request, response) {
