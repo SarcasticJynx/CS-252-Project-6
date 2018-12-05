@@ -52,7 +52,7 @@
         var app = angular.module('mainApp', []);
         app.controller('mainCtrl',function($scope){
             //implement sql server to store and get data
-            $http.get("")
+            $http.get("budgeteering-data.database.windows.net")
             .then(function (response) {$scope.names = response.data.records;});
         });
     </script>
