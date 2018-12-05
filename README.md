@@ -5,6 +5,4 @@ Implementation Todo list:
 
 1)Upgrade main page to add functionality (food price, tax and tip, multiple entries to list, etc.)
 
-2)Implement server hosting functionality (hosting an instance of application and loading it from another computer)
-
 3)Implement data base, user login, and additional functionality (user login, frequent purchase suggestions, etc.)
