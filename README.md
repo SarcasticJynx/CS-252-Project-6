@@ -5,4 +5,4 @@ Implementation Todo list:
 
 1)Upgrade main page to add functionality (food price, tax and tip, multiple entries to list, etc.)
 
-3)Implement data base, user login, and additional functionality (user login, frequent purchase suggestions, etc.)
+2)Implement data base, user login, and additional functionality (user login, frequent purchase suggestions, etc.)
