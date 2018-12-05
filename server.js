@@ -30,5 +30,5 @@ var server = http.createServer(function(request, response) {
         
 });
 
-server.listen(2050, '127.0.0.1');
-console.log('listening to port 2050');
+http.createServer(onRequest).listen(process.env.PORT || 3000);
+console.log('Listening for requests on port ' + (process.env.PORT || 3000));
