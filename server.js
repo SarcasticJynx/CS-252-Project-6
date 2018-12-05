@@ -22,7 +22,7 @@ var server = http.createServer(function(request, response) {
       });
 
   } else {
-    fs.readFile('404 Error Page.html', 'utf-8', function(error, data) {
+    fs.readFile('404-Error-Page.html', 'utf-8', function(error, data) {
       response.writeHead(200, {'Content-Type': 'text/html'});
       response.end(data);
         });
