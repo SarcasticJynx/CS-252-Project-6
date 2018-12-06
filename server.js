@@ -4,12 +4,12 @@ var fs = require('fs');
 var mysql = require('mysql');
 var port = process.env.port || 1337;
 
-var connection = mysql.createConnection({
-  host: "mydb.ics.purdue.edu",
-  user: "jrapsins",
-  password: "JavascriptProject1",
-  database: "jrapsins"
-});
+//var connection = mysql.createConnection({
+  //host: "mydb.ics.purdue.edu",
+  //user: "jrapsins",
+  //password: "JavascriptProject1",
+  //database: "jrapsins"
+//});
 
 //connection.connect(function(err){
   //if(err) throw err;
