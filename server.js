@@ -1,19 +1,19 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-//var mysql = require('mysql');
+var mysql = require('mysql');
 var port = process.env.port || 1337;
 
-//var connection = mysql.createConnection({
-  //host: 'lpvdbamypr04.itap.purdue.edu',
-  //user: 'jrapsins',
-  //password: 'JavascriptProject1',
-  //database: 'jrapsins'
-//})
-//connection.connect(function(err){
-  //if(err) throw err;
-  //console.log("SQL Database connected");
-//});
+var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'jrapsins',
+  password: 'JavascriptProject1',
+  database: 'budgeteering-data'
+})
+connection.connect(function(err){
+  if(err) throw err;
+  console.log("SQL Database connected");
+});
 
 var server = http.createServer(function(request, response) {
 
