@@ -14,6 +14,7 @@
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="Scripts/app.js"></script>
     <body>
         
         <div ng-app="mainApp", ng-controller="mainCtrl">
@@ -55,12 +56,9 @@
         var app = angular.module('mainApp', []);
         //todo
         app.controller('mainCtrl', function($scope){
-            /*
+            
             //implement sql server to store and get data
-            $http.get("jrapsins")
-            .then(function (response) {
-                $scope.items = response.data.records;
-            });
+        
             $scope.AddItem = function() {
                 var data = $.param({
                     Item: JSON.stringify({
@@ -69,11 +67,12 @@
                         Quantity: $scope.quantity
                     })
                 });
+                
                 $http.post("/Budgeteering/", data).success(function(data, status) {
                     console.log('Data posted successfully');
                 })
             };
-            */
+            
         });
     </script>
 </html>
