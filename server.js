@@ -1,8 +1,19 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-//var sql todo
+var sql = require('mysql');
 var port = process.env.port || 1337;
+
+var con = sql.createConnection({
+  host: "mydb.ics.purdue.edu",
+  user: "jrapsins",
+  password: "JavascriptProject1"
+});
+
+con.connect(function(err){
+  if(err) throw err;
+  console.log("SQL Database connected");
+});
 
 var server = http.createServer(function(request, response) {
 
