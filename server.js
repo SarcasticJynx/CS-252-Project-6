@@ -5,9 +5,10 @@ var sql = require('mysql');
 var port = process.env.port || 1337;
 
 var con = sql.createConnection({
-  host: "mydb.ics.purdue.edu",
-  user: "jrapsins",
-  password: "JavascriptProject1"
+  host: 'mydb.ics.purdue.edu',
+  user: 'jrapsins',
+  password: 'JavascriptProject1',
+  database: 'jrapsins'
 });
 
 con.connect(function(err){
