@@ -31,6 +31,12 @@
             </p>
             <button ng-click="AddItem(name,price,quantity)">Add This item</button>
             <table>
+                <tr>
+                    <td>Item Name</td>
+                    <td>Price ($)</td>
+                    <td>Quantity</td>
+                    <td>Total Price ($)</td>
+                </tr>
                 <tr ng-repeat="x in items">
                     <td>{{ $index + 1 }}</td>
                     <td>{{ x.name }}</td>
