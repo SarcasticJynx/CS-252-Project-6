@@ -6,23 +6,6 @@ var fs = require('fs');
 //var app = express();
 var port = process.env.port || 1337;
 
-app.get('/', function (req, res) {
-    var sql = require("mssql");
-
-    // config for your database
-    var config = {
-        user: 'jrapsins',
-        password: 'JavascriptProject1',
-        server: 'mydb.ics.purdue.edu', 
-        database: 'jrapsins' 
-    };
-
-    // connect to your database
-    sql.connect(config, function (err) {
-        if (err) console.log(err);
-    });
-});
-
 //connection.connect(function(err){
   //if(err) throw err;
   //console.log("SQL Database connected");
