@@ -49,22 +49,22 @@
         //todo
         app.controller('mainCtrl', function($scope){
             //implement sql server to store and get data
-            $http.get("jrapsins")
-            .then(function (response) {
-                $scope.items = response.data.records;
-            });
-            $scope.AddItem = function() {
-                var data = $.param({
-                    Item: JSON.stringify({
-                        Name: $scope.name,
-                        Price: $scope.price,
-                        Quantity: $scope.quantity
-                    })
-                });
-                $http.post("/Budgeteering/", data).success(function(data, status) {
-                    console.log('Data posted successfully');
-                })
-            };
+            //$http.get("jrapsins")
+            //.then(function (response) {
+                //$scope.items = response.data.records;
+            //});
+            //$scope.AddItem = function() {
+                //var data = $.param({
+                    //Item: JSON.stringify({
+                        //Name: $scope.name,
+                        //Price: $scope.price,
+                        //Quantity: $scope.quantity
+                    //})
+                //});
+                //$http.post("/Budgeteering/", data).success(function(data, status) {
+                    //console.log('Data posted successfully');
+                //})
+            //};
         });
     </script>
 </html>
