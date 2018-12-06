@@ -48,11 +48,11 @@
         var app = angular.module('mainApp', []);
         //todo
         app.controller('mainCtrl', function($scope){
-            //implement sql server to store and get data
-            //$http.get("jrapsins")
-            //.then(function (response) {
-                //$scope.items = response.data.records;
-            //});
+            implement sql server to store and get data
+            $http.get("jrapsins")
+            .then(function (response) {
+                $scope.items = response.data.records;
+            });
             //$scope.AddItem = function() {
                 //var data = $.param({
                     //Item: JSON.stringify({
