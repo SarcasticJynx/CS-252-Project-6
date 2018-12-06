@@ -53,18 +53,18 @@
             .then(function (response) {
                 $scope.items = response.data.records;
             });
-            //$scope.AddItem = function() {
-                //var data = $.param({
-                    //Item: JSON.stringify({
-                        //Name: $scope.name,
-                        //Price: $scope.price,
-                        //Quantity: $scope.quantity
-                    //})
-                //});
-                //$http.post("/Budgeteering/", data).success(function(data, status) {
-                    //console.log('Data posted successfully');
-                //})
-            //};
+            $scope.AddItem = function() {
+                var data = $.param({
+                    Item: JSON.stringify({
+                        Name: $scope.name,
+                        Price: $scope.price,
+                        Quantity: $scope.quantity
+                    })
+                });
+                $http.post("/Budgeteering/", data).success(function(data, status) {
+                    console.log('Data posted successfully');
+                })
+            };
         });
     </script>
 </html>
