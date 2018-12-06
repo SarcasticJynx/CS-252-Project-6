@@ -6,12 +6,22 @@ var fs = require('fs');
 //var app = express();
 var port = process.env.port || 1337;
 
-//var connection = mysql.createConnection({
-  //host: "mydb.ics.purdue.edu",
-  //user: "jrapsins",
-  //password: "JavascriptProject1",
-  //database: "jrapsins"
-//});
+app.get('/', function (req, res) {
+    var sql = require("mssql");
+
+    // config for your database
+    var config = {
+        user: 'jrapsins',
+        password: 'JavascriptProject1',
+        server: 'mydb.ics.purdue.edu', 
+        database: 'jrapsins' 
+    };
+
+    // connect to your database
+    sql.connect(config, function (err) {
+        if (err) console.log(err);
+    });
+});
 
 //connection.connect(function(err){
   //if(err) throw err;
