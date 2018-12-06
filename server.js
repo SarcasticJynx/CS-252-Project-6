@@ -5,7 +5,7 @@ var fs = require('fs');
 var port = process.env.port || 1337;
 
 //var connection = mysql.createConnection({
-  //host: 'mydb.ics.purdue.edu',
+  //host: 'lpvdbamypr04.itap.purdue.edu',
   //user: 'jrapsins',
   //password: 'JavascriptProject1',
   //database: 'jrapsins'
