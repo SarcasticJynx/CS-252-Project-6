@@ -1,10 +1,10 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-var sql = require('mysql');
+var mysql = require('mysql');
 var port = process.env.port || 1337;
 
-var con = sql.createConnection({
+var connection = mysql.createConnection({
   host: 'mydb.ics.purdue.edu',
   user: 'jrapsins',
   password: 'JavascriptProject1',
