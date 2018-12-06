@@ -4,28 +4,12 @@ var fs = require('fs');
 //var mysql = require('mysql');
 var port = process.env.port || 1337;
 
-var Connection = require('tedious').Connection;
-var Request = require('tedious').Request;
-
-// Create connection to database
-var config =
-{
-    userName: 'jrapsins',
-    password: 'JavascriptProject1',
-    server: 'budgeteering.database.windows.net',
-    options:
-    {
-        database: 'budgeteering-data',
-        encrypt: true
-    }
-}
-connection.on('connect', function(err)
-{
-  if (err)
-   {
-       console.log(err)
-   }
-});
+    //database info
+    //userName: 'jrapsins',
+    //password: 'JavascriptProject1',
+    //server: 'budgeteering.database.windows.net',
+    //options:
+    //database: 'budgeteering-data',
 
 var server = http.createServer(function(request, response) {
 
