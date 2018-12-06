@@ -31,7 +31,7 @@
             </p>
             <button ng-click="AddItem(name,price,quantity)">Add This item</button>
             <table>
-                <tr ng-repeat="x in names">
+                <tr ng-repeat="x in items">
                     <td>{{ $index + 1 }}</td>
                     <td>{{ x.name }}</td>
                     <td>{{ x.price }}</td>
@@ -45,20 +45,26 @@
         </div>
     </body>
     <script>
-        pressed = 0
-        names = []
-        prices = []
-        quantities = []
         var app = angular.module('mainApp', []);
         //todo
-        app.controller('mainCtrl',['$scope', function($scope){
+        app.controller('mainCtrl', function($scope){
             //implement sql server to store and get data
-        //    $http.get("budgeteering-data.database.windows.net")
-          //  .then(function (response) {$scope.names = response.data.records;});
-             $scope.total = 0;  
-            $scope.AddItem = function(name, price, quantity) {
-                $scope.total = price*quantity;
-                 };
-        }]);
+            $http.get("jrapsins")
+            .then(function (response) {
+                $scope.items = response.data.records;
+            });
+            $scope.AddItem = function() {
+                var data = $.param({
+                    Item: JSON.stringify({
+                        Name: $scope.name,
+                        Price: $scope.price,
+                        Quantity: $scope.quantity
+                    })
+                });
+                $http.post("/Budgeteering/", data).success(function(data, status) {
+                    console.log('Data posted successfully');
+                })
+            };
+        });
     </script>
 </html>
