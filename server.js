@@ -1,16 +1,29 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-//var mysql = require('mysql');
+var mysql = require('mysql');
 var port = process.env.port || 1337;
+var app = express();
 
-/*var connection = mysql.createConnection({
+var connection = mysql.createConnection({
     host: 'localhost',
     user: 'jrapsins',
     password: 'JavascriptProject1',
     database: 'budgeteering-data'
 });
-connection.connect();*/
+connection.connect();
+
+app.post('/bugeteering/', function(req, res, next){
+   var cope = req.body.params;
+   var query = connection.query('insert into cope set ?', cope, function(err, result) {
+     if (err) {
+       console.error(err);
+       return res.send(err);
+     } else {
+       return res.send('Ok');
+     }
+});
+app.listen(port);
     //database info
     //userName: 'jrapsins',
     //password: 'JavascriptProject1',
