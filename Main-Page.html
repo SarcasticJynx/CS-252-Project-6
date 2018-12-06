@@ -40,7 +40,7 @@
                 </tr>	
             </table>
             <h1>
-                Total price of {{name}} will be {{price * quantity}}.
+                Total price of {{name}} will be {{total}}.
             </h1>
         </div>
     </body>
@@ -51,10 +51,14 @@
         quantities = []
         var app = angular.module('mainApp', []);
         //todo
-        app.controller('mainCtrl',function($scope){
+        app.controller('mainCtrl',['$scope', function($scope){
             //implement sql server to store and get data
-            $http.get("budgeteering-data.database.windows.net")
-            .then(function (response) {$scope.names = response.data.records;});
-        });
+        //    $http.get("budgeteering-data.database.windows.net")
+          //  .then(function (response) {$scope.names = response.data.records;});
+             $scope.total = 0;  
+            $scope.AddItem = function(name, price, quantity) {
+                $scope.total = price*quantity;
+                 };
+        }]);
     </script>
 </html>
