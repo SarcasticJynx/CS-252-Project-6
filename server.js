@@ -10,11 +10,12 @@ var connection = mysql.createConnection({
   password: 'JavascriptProject1',
   database: 'jrapsins'
 });
+connection.connect();
 
-connection.connect(function(err){
-  if(err) throw err;
-  console.log("SQL Database connected");
-});
+//connection.connect(function(err){
+  //if(err) throw err;
+  //console.log("SQL Database connected");
+//});
 
 var server = http.createServer(function(request, response) {
 
