@@ -2,10 +2,14 @@ var http = require('http');
 var url = require('url');
 var fs = require('fs');
 //var mysql = require('mysql');
-//var express = require('express');
-//var app = express();
 var port = process.env.port || 1337;
 
+//var connection = mysql.createConnection({
+  //host: 'mydb.ics.purdue.edu',
+  //user: 'jrapsins',
+  //password: 'JavascriptProject1',
+  //database: 'jrapsins'
+//})
 //connection.connect(function(err){
   //if(err) throw err;
   //console.log("SQL Database connected");
