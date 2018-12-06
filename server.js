@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
   password: 'JavascriptProject1',
   database: 'jrapsins'
 });
-connection.connect();
+//connection.connect();
 
 //connection.connect(function(err){
   //if(err) throw err;
