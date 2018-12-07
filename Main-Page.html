@@ -36,16 +36,18 @@
             
             <table class="table">
                 <tr>
+                    <td>Index</td>
                     <td>Item Name</td>
                     <td>Price ($)</td>
                     <td>Quantity</td>
-                
+                    <td>Subtotal</td>
                 </tr>
                 <tr ng-repeat="x in items">
+                    <td>{{ x.index }}</td>
                     <td>{{ x.name }}</td>
                     <td>{{ x.price }}</td>
                     <td>{{ x.quantity }}</td>
-                 
+                    <td>{{ x.price * x.quantity }}</td>
                 </tr>   
             </table>
            
@@ -63,12 +65,14 @@
             ];
             //implement sql server to store and get data
             $scope.total = 0;
+            var tableIndex = 1;
             $scope.AddItem = function(name, price, quantity) {
                 $scope.total += price*quantity;
-                $scope.items.push({ 'name':name, 'price':price, 'quantity':quantity });
+                $scope.items.push({ 'index':tableIndex, 'name':name, 'price':price, 'quantity':quantity });
                 $scope.name = '';
                 $scope.price = 0;
                 $scope.quantity = 0;
+                tableIndex += 1;
 
 
                 var data = $.param({
