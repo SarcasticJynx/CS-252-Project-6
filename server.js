@@ -3,7 +3,7 @@ var url = require('url');
 var fs = require('fs');
 //var mysql = require('mysql');
 var port = process.env.port || 1337;
-var app = express();
+//var app = express();
 /*
 var connection = mysql.createConnection({
     host: 'localhost',
