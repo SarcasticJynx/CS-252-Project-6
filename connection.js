@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
     database: 'park862'
 });
 connection.connect(function(err) {
-  var sql = "INSERT INTO budgeteering (ID, PW, item) VALUES ('aa', '123', 'itemA')";
+  var sql = "INSERT INTO budgeteering (ID, PW, item) VALUES ('abc', '1234', 'itemA')";
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("1 record inserted");
