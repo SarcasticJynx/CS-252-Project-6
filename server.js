@@ -3,7 +3,7 @@ var url = require('url');
 var fs = require('fs');
 var mysql = require('mysql');
 var port = process.env.port || 1337;
-var app = express();
+//var app = express();
 
 var connection = mysql.createConnection({
     host: 'mydb.ics.purdue.edu',
@@ -15,7 +15,7 @@ connection.connect();
 
 
 
-app.post('park862', function(req, res, next){
+/*app.post('park862', function(req, res, next){
    var cope = req.body.params;
    var query = connection.query('insert into cope set ?', cope, function(err, result) {
      if (err) {
@@ -25,7 +25,7 @@ app.post('park862', function(req, res, next){
        return res.send('Ok');
      }
 });
-app.listen(port); 
+app.listen(port); */
     //database info
     //userName: 'jrapsins',
     //password: 'JavascriptProject1',
