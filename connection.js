@@ -1,5 +1,6 @@
 var mysql = require('mysql');
 var app = express();
+var port = process.env.port || 1337;
 
 var connection = mysql.createConnection({
     host: 'mydb.ics.purdue.edu',
