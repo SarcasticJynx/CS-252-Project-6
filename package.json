@@ -2,14 +2,14 @@
   "name": "park862",
   "version": "1.0.0",
   "description": "database",
-  "main": "connection.js",
+  "main": "server.js",
   "dependencies": {
     "mysql": "^2.16.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node connection.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
