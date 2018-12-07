@@ -3,6 +3,6 @@ Budgeteer is a program that lets the user keep track of shopping lists, and hand
 
 Implementation Todo list:
 
-1)Upgrade main page to add functionality (food price, tax and tip, multiple entries to list, etc.)
+1)Upgrade main page to add functionality (tax and tip, etc.)
 
-2)Implement data base, user login, and additional functionality (user login, frequent purchase suggestions, etc.)
+2)Implement user login, and additional functionality (user login, frequent purchase suggestions, etc.)
