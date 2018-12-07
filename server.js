@@ -15,7 +15,7 @@ connection.connect();
 
 
 
-app.post('/bugeteering/', function(req, res, next){
+app.post('park862', function(req, res, next){
    var cope = req.body.params;
    var query = connection.query('insert into cope set ?', cope, function(err, result) {
      if (err) {
