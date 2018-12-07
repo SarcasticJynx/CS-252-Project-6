@@ -8,9 +8,16 @@ var connection = mysql.createConnection({
     password: 'sqlpark862',
     database: 'park862'
 });
-connection.connect();
+connection.connect(function(err) {
+  var sql = "INSERT INTO budgeteering (ID, PW, item) VALUES ('aa', '123', 'itemA')";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  });
 
-app.post('budgeteering', function(req, res, next){
+});
+
+app.post('park862', function(req, res, next){
    var cope = req.body.params;
    var query = connection.query('INSERT INTO cope set ?', cope, function(err, result) {
      if (err) {
