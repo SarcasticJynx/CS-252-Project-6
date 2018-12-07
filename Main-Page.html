@@ -15,6 +15,8 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="Scripts/app.js"></script>
+    <script
+    src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <body>
         
         <div ng-app="mainApp", ng-controller="mainCtrl">
@@ -30,25 +32,25 @@
                 Price : <input type="number" ng-model="price" placeholder="Enter price here">
                 Quantity : <input type="number" ng-model="quantity" placeholder="Enter quantity here">
             </p>
-            <button ng-click="AddItem(name,price,quantity)">Add This item</button>
-            <table>
+             <button ng-click="AddItem(name,price,quantity)">Add This item</button>
+            
+            <table class="table">
                 <tr>
-                    <td></td>
                     <td>Item Name</td>
                     <td>Price ($)</td>
                     <td>Quantity</td>
-                    <td>Total Price ($)</td>
+                
                 </tr>
                 <tr ng-repeat="x in items">
-                    <td>{{ $index + 1 }}</td>
                     <td>{{ x.name }}</td>
                     <td>{{ x.price }}</td>
                     <td>{{ x.quantity }}</td>
-                    <td>${{ x.price * x.quantity }}</td>
-                </tr>	
+                 
+                </tr>   
             </table>
+           
             <h1>
-                Total price of {{name}} will be ${{price * quantity}}.
+                Total price will be {{total}}.
             </h1>
         </div>
     </body>
@@ -56,15 +58,24 @@
         var app = angular.module('mainApp', []);
         //todo
         app.controller('mainCtrl', function($scope){
-            
+            $scope.items = [
+                
+            ];
             //implement sql server to store and get data
-        
-            $scope.AddItem = function() {
+            $scope.total = 0;
+            $scope.AddItem = function(name, price, quantity) {
+                $scope.total += price*quantity;
+                $scope.items.push({ 'name':name, 'price':price, 'quantity':quantity });
+                $scope.name = '';
+                $scope.price = 0;
+                $scope.quantity = 0;
+
+
                 var data = $.param({
                     Item: JSON.stringify({
-                        Name: $scope.name,
-                        Price: $scope.price,
-                        Quantity: $scope.quantity
+                        Name: name,
+                        Price: price,
+                        Quantity: quantity
                     })
                 });
                 
