@@ -3,7 +3,8 @@ var app = express();
 var port = process.env.port || 1337;
 
 var connection = mysql.createConnection({
-    host: 'mydb.ics.purdue.edu',
+    //host: 'mydb.ics.purdue.edu',
+    host: '127.0.0.1',
     user: 'park862',
     password: 'sqlpark862',
     database: 'park862'
