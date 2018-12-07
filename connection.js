@@ -11,7 +11,7 @@ connection.connect();
 
 app.post('budgeteering', function(req, res, next){
    var cope = req.body.params;
-   var query = connection.query('insert into cope set ?', cope, function(err, result) {
+   var query = connection.query('INSERT INTO cope set ?', cope, function(err, result) {
      if (err) {
        console.error(err);
        return res.send(err);
